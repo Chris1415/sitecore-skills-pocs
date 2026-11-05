@@ -1,0 +1,10 @@
+# Synthetic test values, not secrets.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Test fixtures: a placeholder client secret and the public jwt.io example token, both asserted to be redacted"
+paths = [
+  '''plugins/sitecore-platform/skills/sitecoreai-health-check/scripts/__tests__/languages\.test\.mjs''',
+  '''plugins/sitecore-platform/skills/sitecoreai-health-check/scripts/__tests__/http\.test\.mjs''',
+]

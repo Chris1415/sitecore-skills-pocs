@@ -1,0 +1,8 @@
+{
+  "_captured": "2026-10-02, GET https://edge-platform.sitecorecloud.io/search/v1/config?sitecoreContextId=<id>, four CM environments of one test org (preview and live ids). Read-only.",
+  "fakeContext_anyAuth": { "status": 404, "body": { "title": "NotFound", "detail": "No sitecore context", "status": 404 } },
+  "realContext_noAuth": { "status": 401, "body": { "type": "https://datatracker.ietf.org/doc/html/rfc7235#section-3.1", "title": "Unauthorized", "detail": "Config endpoint requires Authorization", "status": 401 } },
+  "realContext_orgAutomationClientBearer": { "status": 403, "body": { "message": "insufficient scopes" }, "tokenScopes": "xmclouddeploy.* manage scopes + xmcloud.cm:admin" },
+  "realContext_edgeAdminClientBearer": { "status": 403, "body": { "message": "insufficient scopes" }, "tokenScopes": "edge.caches/settings/webhooks/tokens/content scopes" },
+  "unknownPath_control": { "status": 404, "detail": "TypeError: Cannot convert undefined or null to object" }
+}

@@ -1,0 +1,227 @@
+{
+  "name": "Northwind Advisory",
+  "module": "northwind-advisory",
+  "description": "A consulting-firm site: hero, service cards, a services section with detail pages, about and contact, with header and footer.",
+  "contents": {
+    "Pages": "Home, Services (with 2 service pages), About, Contact",
+    "Components": "Promo, Rich Text, Title, Navigation, Container",
+    "Page types": "Landing Page, Service Page"
+  },
+  "sortOrder": 3,
+  "thumbnail": "northwind-thumb.png",
+  "renderingHost": "nextjsstarter",
+  "homeType": "Landing Page",
+  "pageTypes": [
+    {
+      "name": "Landing Page",
+      "icon": "Office/32x32/home.png"
+    },
+    {
+      "name": "Service Page",
+      "icon": "Office/32x32/gearwheels.png",
+      "fields": [
+        {
+          "name": "Summary",
+          "type": "Multi-Line Text"
+        },
+        {
+          "name": "Lead Consultant",
+          "type": "Single-Line Text"
+        }
+      ]
+    }
+  ],
+  "partials": [
+    {
+      "name": "Header",
+      "placeholder": "headless-header",
+      "components": [
+        {
+          "rendering": "Page Content/Title"
+        },
+        {
+          "rendering": "Navigation/Navigation"
+        }
+      ]
+    },
+    {
+      "name": "Footer",
+      "placeholder": "headless-footer",
+      "components": [
+        {
+          "rendering": "Page Content/RichText",
+          "datasource": {
+            "name": "Address",
+            "fields": {
+              "Text": "<p><strong>Northwind Advisory</strong><br/>12 Harbour Street, Hamburg</p>"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "path": "",
+      "fields": {
+        "Title": "Northwind Advisory"
+      },
+      "components": [
+        {
+          "rendering": "Page Content/Promo",
+          "datasource": {
+            "name": "Hero",
+            "fields": {
+              "PromoText": "<h1>Clear advice for complex change</h1>",
+              "PromoText2": "<p>Strategy, operations and technology, from people who have run them.</p>"
+            }
+          }
+        },
+        {
+          "rendering": "Page Content/RichText",
+          "datasource": {
+            "name": "Intro",
+            "fields": {
+              "Text": "<p>We work with mid-sized companies on the decisions that are expensive to get wrong.</p>"
+            }
+          }
+        },
+        {
+          "rendering": "Page Structure/Container",
+          "children": [
+            {
+              "rendering": "Page Content/Promo",
+              "datasource": {
+                "name": "Card Strategy",
+                "fields": {
+                  "PromoText": "<h3>Strategy</h3>",
+                  "PromoText2": "<p>Where to play and how to win.</p>"
+                }
+              }
+            },
+            {
+              "rendering": "Page Content/Promo",
+              "datasource": {
+                "name": "Card Operations",
+                "fields": {
+                  "PromoText": "<h3>Operations</h3>",
+                  "PromoText2": "<p>Make the plan run on Monday morning.</p>"
+                }
+              }
+            },
+            {
+              "rendering": "Page Content/Promo",
+              "datasource": {
+                "name": "Card Technology",
+                "fields": {
+                  "PromoText": "<h3>Technology</h3>",
+                  "PromoText2": "<p>Platforms chosen for the next ten years.</p>"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "Services",
+      "type": "Landing Page",
+      "fields": {
+        "Title": "Services"
+      },
+      "components": [
+        {
+          "rendering": "Page Content/RichText",
+          "datasource": {
+            "name": "Overview",
+            "fields": {
+              "Text": "<h2>What we do</h2><p>Three practices, one team.</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "Services/Strategy",
+      "type": "Service Page",
+      "fields": {
+        "Title": "Strategy",
+        "Summary": "Portfolio and market strategy.",
+        "Lead Consultant": "A. Berg"
+      },
+      "components": [
+        {
+          "rendering": "Page Content/Title"
+        },
+        {
+          "rendering": "Page Content/RichText",
+          "datasource": {
+            "name": "Body",
+            "fields": {
+              "Text": "<p>We start with the numbers you already have.</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "Services/Operations",
+      "type": "Service Page",
+      "fields": {
+        "Title": "Operations",
+        "Summary": "Operating model and process design.",
+        "Lead Consultant": "J. Okafor"
+      },
+      "components": [
+        {
+          "rendering": "Page Content/Title"
+        },
+        {
+          "rendering": "Page Content/RichText",
+          "datasource": {
+            "name": "Body",
+            "fields": {
+              "Text": "<p>Process changes that survive the first quarter.</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "About",
+      "type": "Landing Page",
+      "fields": {
+        "Title": "About us"
+      },
+      "components": [
+        {
+          "rendering": "Page Content/RichText",
+          "datasource": {
+            "name": "Story",
+            "fields": {
+              "Text": "<h2>Since 2009</h2><p>Forty consultants, three offices.</p>"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "Contact",
+      "type": "Landing Page",
+      "fields": {
+        "Title": "Contact"
+      },
+      "components": [
+        {
+          "rendering": "Page Content/RichText",
+          "datasource": {
+            "name": "Details",
+            "fields": {
+              "Text": "<p>hello@northwind.example · +49 40 000000</p>"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

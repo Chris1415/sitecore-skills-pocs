@@ -1,0 +1,75 @@
+name: validate
+
+# Every check here must be able to fail: tests/run.mjs proves each one against broken fixtures first.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  # Manual run: GitHub sometimes records no push event for a merge (seen 2026-10-21: #24, #25).
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # gitleaks scans the full history
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+
+      - name: Self-tests (each check fails on its broken fixture)
+        run: node tests/run.mjs
+
+      # The tests inside the skills: guards, injection cases and mutation checks that tests/run.mjs does not reach.
+      - name: Skill tests
+        run: find plugins -path '*/__tests__/*.test.mjs' -print0 | xargs -0 node --test
+
+      - name: Skill lint
+        run: node tools/skill-lint.mjs
+
+      # Second opinion from the Agent Skills reference validator (spec-level checks only; our lint covers more).
+      - name: Agent Skills spec (skills-ref)
+        run: |
+          pip install --quiet skills-ref==0.1.1
+          fail=0; for d in plugins/*/skills/*/; do agentskills validate "$d" || fail=1; done; exit $fail
+
+      - name: Versions raised for changed plugins and skills
+        env:
+          BASE: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before || 'HEAD~1' }}
+        run: |
+          case "$BASE" in
+            0000000000000000000000000000000000000000) echo "first push: no earlier version to compare" ;;
+            *) node tools/release-check.mjs --base "$BASE" ;;
+          esac
+
+      - name: Agent manifests in sync
+        run: node scripts/gen-agent-manifests.mjs --check
+
+      - name: Catalog in sync
+        run: node tools/catalog.mjs --check
+
+      # GitHub gives a pull request from a fork no secrets, so a fork gets the public rules only.
+      # Pushes to main and same-repo PRs always run the private scan: a missing secret there exits 2.
+      - name: Scrub (public rules, plus private patterns from the SCRUB_PATTERNS secret)
+        env:
+          SCRUB_PATTERNS: ${{ secrets.SCRUB_PATTERNS }}
+          FORK_PR: ${{ github.repository != 'Chris1415/sitecore-skills-pocs' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) }}
+        run: |
+          if [ "$FORK_PR" = "true" ]; then node tools/scrub.mjs --public-only; else node tools/scrub.mjs; fi
+
+      - name: Secret scan (gitleaks, checksum-verified binary)
+        env:
+          GITLEAKS_VERSION: 8.30.1
+          GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+        run: |
+          curl -sSfL -o gitleaks.tgz "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tgz" | sha256sum -c -
+          tar -xzf gitleaks.tgz gitleaks
+          ./gitleaks git . --no-banner --redact --exit-code 1

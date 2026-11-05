@@ -1,0 +1,19 @@
+{
+  "name": "sitecore-guide",
+  "displayName": "Sitecore Guide - Start here",
+  "description": "Start here: which Sitecore plugin and skill fits a task, and how to install, update and call them. Install first, next to any other Sitecore plugin.",
+  "version": "0.3.0",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Christian Hahn"
+  },
+  "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "repository": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "keywords": [
+    "sitecore",
+    "guide",
+    "start",
+    "skills",
+    "catalog"
+  ]
+}

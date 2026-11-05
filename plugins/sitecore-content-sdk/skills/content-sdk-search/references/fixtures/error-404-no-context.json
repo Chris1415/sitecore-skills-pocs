@@ -1,0 +1,5 @@
+{
+  "_captured": "2026-10-02, POST https://edge-platform.sitecorecloud.io/v1/search with x-sitecore-contextid = 00000000-0000-0000-0000-000000000000 (also: no header). HTTP 404, application/problem+json-style body.",
+  "status": 404,
+  "body": { "type": "https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.4", "title": "NotFound", "detail": "No sitecore context", "instance": "https://edge-platform.sitecorecloud.io/v1/search", "status": 404 }
+}

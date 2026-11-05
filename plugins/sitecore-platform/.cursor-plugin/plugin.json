@@ -1,0 +1,18 @@
+{
+  "name": "sitecore-platform",
+  "description": "Working on the SitecoreAI platform itself: OAuth auth, Agent, Pages, Publishing and Sites APIs, GraphQL schemas, Edge (admin webhooks, GraphQL capture), Sitecore CLI and serialization, search sources, languages, personalization, site templates, Marketer MCP page composition, brand voice and a read-only health check.",
+  "version": "0.22.0",
+  "author": {
+    "name": "Christian Hahn"
+  },
+  "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "repository": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sitecore",
+    "sitecoreai",
+    "xm-cloud",
+    "rest-api",
+    "graphql"
+  ]
+}

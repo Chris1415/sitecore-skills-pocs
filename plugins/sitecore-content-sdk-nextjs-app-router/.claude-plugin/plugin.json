@@ -1,0 +1,19 @@
+{
+  "name": "sitecore-content-sdk-nextjs-app-router",
+  "displayName": "Sitecore Content SDK - Next.js App Router",
+  "description": "Content SDK skills for Next.js App Router head apps, including Content SDK Atoms (BETA). Install with 'Sitecore Content SDK - Core'.",
+  "version": "0.13.0",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Christian Hahn"
+  },
+  "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "repository": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "keywords": [
+    "sitecore",
+    "content-sdk",
+    "app-router",
+    "nextjs",
+    "xm-cloud"
+  ]
+}

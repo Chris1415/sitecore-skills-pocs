@@ -1,0 +1,91 @@
+{
+  "name": "sitecore-skills-pocs",
+  "owner": {
+    "name": "Christian Hahn",
+    "url": "https://github.com/Chris1415"
+  },
+  "description": "Developer skills for Sitecore, in topic plugins named sitecore-*: Content SDK (App Router, Pages Router, Core), the SitecoreAI platform (APIs, CLI, Edge, tenant config), Marketplace SDK, Blok, project setup, and a start-here guide. Install sitecore-guide plus only the plugins a project needs.",
+  "version": "0.31.0",
+  "plugins": [
+    {
+      "name": "sitecore-guide",
+      "source": "./plugins/sitecore-guide",
+      "displayName": "Sitecore Guide - Start here",
+      "description": "Start here: which Sitecore plugin and skill fits a task, and how to install, update and call them. Install first, next to any other Sitecore plugin.",
+      "version": "0.3.0",
+      "category": "sitecore",
+      "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "sitecore-content-sdk-nextjs-app-router",
+      "source": "./plugins/sitecore-content-sdk-nextjs-app-router",
+      "displayName": "Sitecore Content SDK - Next.js App Router",
+      "description": "Content SDK skills for Next.js App Router head apps, including Content SDK Atoms (BETA). Install with 'Sitecore Content SDK - Core'.",
+      "version": "0.13.0",
+      "category": "sitecore",
+      "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "sitecore-content-sdk-nextjs-pages-router",
+      "source": "./plugins/sitecore-content-sdk-nextjs-pages-router",
+      "displayName": "Sitecore Content SDK - Next.js Pages Router",
+      "description": "Content SDK skills for Next.js Pages Router head apps. Install with 'Sitecore Content SDK - Core'.",
+      "version": "0.7.0",
+      "category": "sitecore",
+      "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "sitecore-content-sdk",
+      "source": "./plugins/sitecore-content-sdk",
+      "displayName": "Sitecore Content SDK - Core",
+      "description": "Router-agnostic Content SDK essentials plus the Sitecore side of a component: troubleshooting hub, feature planner, component review, create a rendering, list and navigation components, collection data models, icons, layout composition, field usage, resolvers, personalization, search, consent, upgrades. Install with a router plugin.",
+      "version": "0.20.1",
+      "category": "sitecore",
+      "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "sitecore-platform",
+      "source": "./plugins/sitecore-platform",
+      "displayName": "Sitecore Platform (SitecoreAI)",
+      "description": "Working on the SitecoreAI platform itself: OAuth auth, Agent, Pages, Publishing and Sites APIs, GraphQL schemas, Edge (admin webhooks, GraphQL capture), Sitecore CLI and serialization, search sources, languages, personalization, site templates, Marketer MCP page composition, brand voice and a read-only health check.",
+      "version": "0.22.0",
+      "category": "sitecore",
+      "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "sitecore-marketplace",
+      "source": "./plugins/sitecore-marketplace",
+      "displayName": "Sitecore Marketplace",
+      "description": "Sitecore Marketplace SDK: client, xmc and ai references, app lifecycle, extension routes, testing and debugging, host-frame visual testing. Scaffolds are in sitecore-setup.",
+      "version": "0.8.0",
+      "category": "sitecore",
+      "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "sitecore-blok",
+      "source": "./plugins/sitecore-blok",
+      "displayName": "Sitecore Blok",
+      "description": "Blok design system — catalog, setup, theming, MCP, and Marketplace integration.",
+      "version": "0.5.0",
+      "category": "sitecore",
+      "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "sitecore-setup",
+      "source": "./plugins/sitecore-setup",
+      "displayName": "Sitecore Setup - Project scaffolding",
+      "description": "The scaffold decision tree plus the per-target scaffolds for Content SDK head apps and both Marketplace app shapes. Cross-domain by design.",
+      "version": "0.6.0",
+      "category": "sitecore",
+      "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+      "license": "Apache-2.0"
+    }
+  ]
+}

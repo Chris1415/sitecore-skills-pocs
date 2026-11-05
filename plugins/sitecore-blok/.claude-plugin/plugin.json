@@ -1,0 +1,19 @@
+{
+  "name": "sitecore-blok",
+  "displayName": "Sitecore Blok",
+  "description": "Blok design system — the primitive/blok component catalog, project setup (shadcn init + Blok theme), theming tokens, the Blok MCP, and how Blok composes with the Marketplace SDK.",
+  "version": "0.5.0",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Christian Hahn"
+  },
+  "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "repository": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "keywords": [
+    "sitecore",
+    "blok",
+    "design-system",
+    "shadcn",
+    "tailwind"
+  ]
+}

@@ -1,0 +1,3182 @@
+{
+  "queryType": "Query",
+  "mutationType": "Mutation",
+  "totalTypes": 316,
+  "types": {
+    "Item": {
+      "kind": "OBJECT",
+      "description": "Represents an item in Sitecore.",
+      "fields": [
+        {
+          "name": "access",
+          "type": "ItemAccess",
+          "args": [
+            {
+              "name": "username",
+              "type": "String"
+            }
+          ],
+          "description": "The access rights for the current user or for the given user"
+        },
+        {
+          "name": "ancestors",
+          "type": "[Item!]!",
+          "args": [],
+          "description": "The ancestors of the item."
+        },
+        {
+          "name": "children",
+          "type": "ItemConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "excludeTemplateIDs",
+              "type": "[ID]"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "hasVersionInLanguages",
+              "type": "[ID]"
+            },
+            {
+              "name": "includeHiddenItems",
+              "type": "Boolean"
+            },
+            {
+              "name": "includeTemplateIDs",
+              "type": "[ID]"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "requirePresentation",
+              "type": "Boolean"
+            }
+          ],
+          "description": "Provides access to the item children."
+        },
+        {
+          "name": "database",
+          "type": "String!",
+          "args": [],
+          "description": "The name of the database where the item is located."
+        },
+        {
+          "name": "displayName",
+          "type": "String",
+          "args": [],
+          "description": "The localized item name."
+        },
+        {
+          "name": "field",
+          "type": "ItemField",
+          "args": [
+            {
+              "name": "name",
+              "type": "String!"
+            }
+          ],
+          "description": "Access field by field name."
+        },
+        {
+          "name": "fields",
+          "type": "ItemFieldConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "excludeStandardFields",
+              "type": "Boolean!"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "ownFields",
+              "type": "Boolean!"
+            },
+            {
+              "name": "withLanguageFallback",
+              "type": "Boolean!"
+            }
+          ],
+          "description": "Provides access to the fields of the item."
+        },
+        {
+          "name": "hasChildren",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "excludeTemplateIDs",
+              "type": "[ID]"
+            },
+            {
+              "name": "hasVersionInLanguages",
+              "type": "[ID]"
+            },
+            {
+              "name": "includeHiddenItems",
+              "type": "Boolean"
+            },
+            {
+              "name": "includeTemplateIDs",
+              "type": "[ID]"
+            },
+            {
+              "name": "requirePresentation",
+              "type": "Boolean"
+            }
+          ],
+          "description": "Indicates whether the item has sub-items or not. excludeTemplateIDs overwrites includeTemplateIDs if both are present."
+        },
+        {
+          "name": "hasPresentation",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Indicates whether the item has a presentation."
+        },
+        {
+          "name": "icon",
+          "type": "Url",
+          "args": [
+            {
+              "name": "size",
+              "type": "IconSize"
+            }
+          ],
+          "description": "The URI of the item icon."
+        },
+        {
+          "name": "insertOptions",
+          "type": "[ItemTemplate!]!",
+          "args": [],
+          "description": "The insert options of the item."
+        },
+        {
+          "name": "isFallback",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Indicates whether this item instance was resolved using language or version fallback instead of having its own value."
+        },
+        {
+          "name": "itemId",
+          "type": "ID!",
+          "args": [
+            {
+              "name": "format",
+              "type": "IdFormat"
+            }
+          ],
+          "description": "The globally-unique identifier for the item."
+        },
+        {
+          "name": "itemUri",
+          "type": "String!",
+          "args": [],
+          "description": "The URI of the item."
+        },
+        {
+          "name": "language",
+          "type": "Language!",
+          "args": [],
+          "description": "The item language."
+        },
+        {
+          "name": "lock",
+          "type": "ItemLock",
+          "args": [
+            {
+              "name": "username",
+              "type": "String"
+            }
+          ],
+          "description": "The lock information of the item."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "A short description of the item. The name is not localized."
+        },
+        {
+          "name": "parent",
+          "type": "Item",
+          "args": [],
+          "description": "Provides access to the parent for this item. Returns a null value for the root item."
+        },
+        {
+          "name": "path",
+          "type": "String!",
+          "args": [],
+          "description": "The full item path from the root."
+        },
+        {
+          "name": "publish",
+          "type": "ItemPublish!",
+          "args": [],
+          "description": "Publishing information of the item."
+        },
+        {
+          "name": "template",
+          "type": "ItemTemplate!",
+          "args": [],
+          "description": "Provides access to the template for this item."
+        },
+        {
+          "name": "thumbnailUrl",
+          "type": "String",
+          "args": [
+            {
+              "name": "options",
+              "type": "MediaUrlOptionsInput"
+            }
+          ],
+          "description": "The thumbnail URL of the item."
+        },
+        {
+          "name": "url",
+          "type": "String!",
+          "args": [
+            {
+              "name": "options",
+              "type": "ItemUrlOptionsInput"
+            }
+          ],
+          "description": "Gets the item URL."
+        },
+        {
+          "name": "version",
+          "type": "Int!",
+          "args": [],
+          "description": "The version of the item."
+        },
+        {
+          "name": "versionName",
+          "type": "String",
+          "args": [],
+          "description": "The version name of the item"
+        },
+        {
+          "name": "versions",
+          "type": "[Item!]!",
+          "args": [
+            {
+              "name": "allLanguages",
+              "type": "Boolean!"
+            }
+          ],
+          "description": "Provides access to the different versions of the item."
+        },
+        {
+          "name": "workflow",
+          "type": "ItemWorkflow",
+          "args": [],
+          "description": "Provides access to the different versions of the item."
+        }
+      ]
+    },
+    "ItemField": {
+      "kind": "OBJECT",
+      "description": "Represents an item field.",
+      "fields": [
+        {
+          "name": "access",
+          "type": "ItemFieldAccess!",
+          "args": [
+            {
+              "name": "userName",
+              "type": "String"
+            }
+          ],
+          "description": "The item field access."
+        },
+        {
+          "name": "containsFallbackValue",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Indicates if the field value is fallback value."
+        },
+        {
+          "name": "containsInheritedValue",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Indicates if the field value is inherited value."
+        },
+        {
+          "name": "containsStandardValue",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Indicates if the field value is standard value."
+        },
+        {
+          "name": "fieldId",
+          "type": "ID!",
+          "args": [
+            {
+              "name": "format",
+              "type": "IdFormat"
+            }
+          ],
+          "description": "The globally-unique identifier for the field."
+        },
+        {
+          "name": "label",
+          "type": "String!",
+          "args": [],
+          "description": "The field label."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "The field name."
+        },
+        {
+          "name": "templateField",
+          "type": "ItemTemplateField!",
+          "args": [],
+          "description": "The item template field."
+        },
+        {
+          "name": "validation",
+          "type": "[ItemFieldValidation!]!",
+          "args": [
+            {
+              "name": "modes",
+              "type": "[String]"
+            }
+          ],
+          "description": "The item field validation."
+        },
+        {
+          "name": "value",
+          "type": "String!",
+          "args": [],
+          "description": "The string value of the field."
+        }
+      ]
+    },
+    "ItemTemplate": {
+      "kind": "OBJECT",
+      "description": "Represents the item template.",
+      "fields": [
+        {
+          "name": "access",
+          "type": "ItemTemplateAccess",
+          "args": [
+            {
+              "name": "username",
+              "type": "String"
+            }
+          ],
+          "description": "The access rights for the current user or for the given user"
+        },
+        {
+          "name": "baseTemplates",
+          "type": "ItemTemplateConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "directOnly",
+              "type": "Boolean"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": "The base templates of the item template."
+        },
+        {
+          "name": "fields",
+          "type": "ItemTemplateFieldConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": "All field definitions of the item template."
+        },
+        {
+          "name": "fullName",
+          "type": "String!",
+          "args": [],
+          "description": "The full name of the item template."
+        },
+        {
+          "name": "hasAnyOfBaseTemplates",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "templateIds",
+              "type": "[ID]!"
+            }
+          ],
+          "description": "Indicates whether at least one of the specified item templates is a base template."
+        },
+        {
+          "name": "icon",
+          "type": "String",
+          "args": [],
+          "description": "The icon of the item template."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "The name of the item template."
+        },
+        {
+          "name": "ownFields",
+          "type": "ItemTemplateFieldConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": "Only own field definitions of the item template."
+        },
+        {
+          "name": "sections",
+          "type": "ItemTemplateSectionConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": "The section definitions of the item template."
+        },
+        {
+          "name": "standardValuesItem",
+          "type": "Item",
+          "args": [
+            {
+              "name": "language",
+              "type": "String!"
+            }
+          ],
+          "description": "The standard values item created for the item template."
+        },
+        {
+          "name": "templateId",
+          "type": "ID!",
+          "args": [
+            {
+              "name": "format",
+              "type": "IdFormat"
+            }
+          ],
+          "description": "The globally-unique identifier of the item template."
+        }
+      ]
+    },
+    "ItemTemplateField": {
+      "kind": "OBJECT",
+      "description": "Represents the field of the data template in Sitecore.",
+      "fields": [
+        {
+          "name": "blob",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The template field has a blob content."
+        },
+        {
+          "name": "dataSource",
+          "type": "ItemTemplateFieldSource",
+          "args": [],
+          "description": "The field resolved source items."
+        },
+        {
+          "name": "defaultValue",
+          "type": "String",
+          "args": [],
+          "description": "The default value of the template field."
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "args": [
+            {
+              "name": "language",
+              "type": "String!"
+            }
+          ],
+          "description": "The description of the template field. The value is language specific."
+        },
+        {
+          "name": "excludeFromTextSearch",
+          "type": "Boolean",
+          "args": [],
+          "description": "Exclude the template field from full text search."
+        },
+        {
+          "name": "helpLink",
+          "type": "String",
+          "args": [],
+          "description": "The help link of the template field."
+        },
+        {
+          "name": "icon",
+          "type": "String",
+          "args": [],
+          "description": "The icon of the template field."
+        },
+        {
+          "name": "ignoreDictionaryTranslations",
+          "type": "Boolean!",
+          "args": [],
+          "description": null
+        },
+        {
+          "name": "key",
+          "type": "String!",
+          "args": [],
+          "description": "The key of the template field."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "The name of the template field."
+        },
+        {
+          "name": "section",
+          "type": "ItemTemplateSection!",
+          "args": [],
+          "description": "The section where the template field belong."
+        },
+        {
+          "name": "sharedLanguageFallbackEnabled",
+          "type": "Boolean!",
+          "args": [],
+          "description": null
+        },
+        {
+          "name": "shortDescription",
+          "type": "String",
+          "args": [
+            {
+              "name": "language",
+              "type": "String!"
+            }
+          ],
+          "description": "The shor description of the template field. The value is language specific."
+        },
+        {
+          "name": "sortOrder",
+          "type": "Int",
+          "args": [],
+          "description": "The sort order."
+        },
+        {
+          "name": "source",
+          "type": "String",
+          "args": [],
+          "description": "The source value of the template field."
+        },
+        {
+          "name": "style",
+          "type": "String",
+          "args": [],
+          "description": "The style for the template field."
+        },
+        {
+          "name": "templateFieldId",
+          "type": "ID!",
+          "args": [
+            {
+              "name": "format",
+              "type": "IdFormat"
+            }
+          ],
+          "description": "The globally-unique identifier of the template field."
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "args": [
+            {
+              "name": "language",
+              "type": "String!"
+            }
+          ],
+          "description": "The title of the template field. The value is language specific."
+        },
+        {
+          "name": "toolTip",
+          "type": "String",
+          "args": [
+            {
+              "name": "language",
+              "type": "String!"
+            }
+          ],
+          "description": "The tooltip of the template field. The value is language specific."
+        },
+        {
+          "name": "type",
+          "type": "String!",
+          "args": [],
+          "description": "The type of the template field."
+        },
+        {
+          "name": "typeKey",
+          "type": "String!",
+          "args": [],
+          "description": "The type key of the template field."
+        },
+        {
+          "name": "validation",
+          "type": "String",
+          "args": [],
+          "description": "The validation assigned to the template field."
+        },
+        {
+          "name": "validationText",
+          "type": "String",
+          "args": [
+            {
+              "name": "language",
+              "type": "String!"
+            }
+          ],
+          "description": "The validation text for the template field. The value is language specific."
+        },
+        {
+          "name": "versioning",
+          "type": "FieldVersioning!",
+          "args": [],
+          "description": "The versioning of the template field."
+        }
+      ]
+    },
+    "ItemTemplateSection": {
+      "kind": "OBJECT",
+      "description": "Represents the section of the data template in Sitecore.",
+      "fields": [
+        {
+          "name": "icon",
+          "type": "String",
+          "args": [],
+          "description": "The icon of the template section."
+        },
+        {
+          "name": "itemTemplateSectionId",
+          "type": "ID!",
+          "args": [
+            {
+              "name": "format",
+              "type": "IdFormat"
+            }
+          ],
+          "description": "The globally-unique identifier of the template section."
+        },
+        {
+          "name": "key",
+          "type": "String!",
+          "args": [],
+          "description": "The key of the template section."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "The name of the template section."
+        },
+        {
+          "name": "sortOrder",
+          "type": "Int",
+          "args": [],
+          "description": "The sort order."
+        }
+      ]
+    },
+    "ItemFieldConnection": {
+      "kind": "OBJECT",
+      "description": "A connection to a list of items.",
+      "fields": [
+        {
+          "name": "edges",
+          "type": "[ItemFieldEdge!]",
+          "args": [],
+          "description": "A list of edges."
+        },
+        {
+          "name": "nodes",
+          "type": "[ItemField]",
+          "args": [],
+          "description": "A flattened list of the nodes."
+        },
+        {
+          "name": "pageInfo",
+          "type": "PageInfo!",
+          "args": [],
+          "description": "Information to aid in pagination."
+        }
+      ]
+    },
+    "ItemConnection": {
+      "kind": "OBJECT",
+      "description": "A connection to a list of items.",
+      "fields": [
+        {
+          "name": "edges",
+          "type": "[ItemEdge!]",
+          "args": [],
+          "description": "A list of edges."
+        },
+        {
+          "name": "nodes",
+          "type": "[Item]",
+          "args": [],
+          "description": "A flattened list of the nodes."
+        },
+        {
+          "name": "pageInfo",
+          "type": "PageInfo!",
+          "args": [],
+          "description": "Information to aid in pagination."
+        }
+      ]
+    },
+    "ItemTemplateFieldConnection": {
+      "kind": "OBJECT",
+      "description": "A connection to a list of items.",
+      "fields": [
+        {
+          "name": "edges",
+          "type": "[ItemTemplateFieldEdge!]",
+          "args": [],
+          "description": "A list of edges."
+        },
+        {
+          "name": "nodes",
+          "type": "[ItemTemplateField]",
+          "args": [],
+          "description": "A flattened list of the nodes."
+        },
+        {
+          "name": "pageInfo",
+          "type": "PageInfo!",
+          "args": [],
+          "description": "Information to aid in pagination."
+        }
+      ]
+    },
+    "ItemQueryInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents an item query.",
+      "inputFields": [
+        {
+          "name": "database",
+          "type": "String",
+          "description": "The name of the database where item exits."
+        },
+        {
+          "name": "existingVersionOnly",
+          "type": "Boolean",
+          "description": "Indicates whether to return the item even if the requested version does not exist."
+        },
+        {
+          "name": "itemId",
+          "type": "ID",
+          "description": "The item ID. If both ID and path parameters are specified, the path parameter is ignored."
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "description": "The item language."
+        },
+        {
+          "name": "path",
+          "type": "String",
+          "description": "The full item path. If both ID and path parameters are specified, the path parameter is ignored."
+        },
+        {
+          "name": "requirePresentation",
+          "type": "Boolean",
+          "description": "DEPRECATED. Indicates whether the item required must have presentation."
+        },
+        {
+          "name": "version",
+          "type": "Int",
+          "description": "The version number of the item."
+        }
+      ]
+    },
+    "ItemTemplateQueryInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents a query against item templates.",
+      "inputFields": [
+        {
+          "name": "contextItemId",
+          "type": "ID",
+          "description": "The ID of the context item. If provided the template query will try to lookup field sources."
+        },
+        {
+          "name": "database",
+          "type": "String",
+          "description": "The name of the item database."
+        },
+        {
+          "name": "path",
+          "type": "String",
+          "description": "The path of the item template."
+        },
+        {
+          "name": "templateId",
+          "type": "ID",
+          "description": "The ID of the item template. If both ID and path parameters are specified, the path parameter is ignored."
+        }
+      ]
+    },
+    "SearchQueryInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents input with search query and parameters.",
+      "inputFields": [
+        {
+          "name": "facetMetrics",
+          "type": "[SearchFacetMetricInput]",
+          "description": "The list of facets metrics."
+        },
+        {
+          "name": "facetOnFields",
+          "type": "[String]",
+          "description": "The list of fields for building facets."
+        },
+        {
+          "name": "filterStatement",
+          "type": "SearchStatementInput",
+          "description": "The filter statement."
+        },
+        {
+          "name": "index",
+          "type": "String",
+          "description": "The name of the index used for searching."
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "description": "The flag controlling whether to search in a particular language."
+        },
+        {
+          "name": "latestVersionOnly",
+          "type": "Boolean",
+          "description": "The flag controlling whether to return all or only latest versions of items in the search result."
+        },
+        {
+          "name": "paging",
+          "type": "SearchPagingInput",
+          "description": "The paging parameters."
+        },
+        {
+          "name": "searchStatement",
+          "type": "SearchStatementInput",
+          "description": "The search statement."
+        },
+        {
+          "name": "sort",
+          "type": "[SearchSortInput]",
+          "description": "The list of fields for ordering the search results."
+        }
+      ]
+    },
+    "MediaItemQueryInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents media item query",
+      "inputFields": [
+        {
+          "name": "database",
+          "type": "String",
+          "description": "The name of the database where media item exits."
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "description": "The language of the media item."
+        },
+        {
+          "name": "mediaItemId",
+          "type": "ID",
+          "description": "The ID of the media item. If both ID and path parameters are specified, the path parameter is ignored."
+        },
+        {
+          "name": "path",
+          "type": "String",
+          "description": "The full path of the media item. If both ID and path parameters are specified, the path parameter is ignored."
+        },
+        {
+          "name": "version",
+          "type": "Int",
+          "description": "The version number of the media item."
+        }
+      ]
+    },
+    "GetRenderingsInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents input parameters for geting site renderings",
+      "inputFields": [
+        {
+          "name": "database",
+          "type": "String",
+          "description": "Context database"
+        },
+        {
+          "name": "renderingId",
+          "type": "ID",
+          "description": "Unique identifier of the rendering."
+        },
+        {
+          "name": "siteRootItemId",
+          "type": "ID",
+          "description": "Unique identifier of the site root item."
+        }
+      ]
+    },
+    "DefaultPresentationInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents default input parameters",
+      "inputFields": [
+        {
+          "name": "database",
+          "type": "String",
+          "description": "Context database"
+        },
+        {
+          "name": "siteName",
+          "type": "String!",
+          "description": "Current site name"
+        }
+      ]
+    },
+    "DefaultPageBranchesInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents default page branches input parameters",
+      "inputFields": [
+        {
+          "name": "database",
+          "type": "String",
+          "description": "Context database"
+        },
+        {
+          "name": "siteName",
+          "type": "String!",
+          "description": "Current site name"
+        }
+      ]
+    },
+    "DefaultInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents default input parameters",
+      "inputFields": [
+        {
+          "name": "database",
+          "type": "String",
+          "description": "Context database"
+        }
+      ]
+    },
+    "FieldValueInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Item field data.",
+      "inputFields": [
+        {
+          "name": "name",
+          "type": "String!",
+          "description": "The field name."
+        },
+        {
+          "name": "reset",
+          "type": "Boolean",
+          "description": "Indicates whether to reset the field value. The default value is false."
+        },
+        {
+          "name": "value",
+          "type": "String",
+          "description": "The field value. If the value is not specified or the Reset parameter is true, the field value is reset to the standard value."
+        }
+      ]
+    },
+    "FieldVersioning": {
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "VERSIONED",
+          "description": null
+        },
+        {
+          "name": "UNVERSIONED",
+          "description": null
+        },
+        {
+          "name": "SHARED",
+          "description": null
+        }
+      ]
+    },
+    "PaginationAmount": {
+      "kind": "SCALAR"
+    },
+    "IdFormat": {
+      "kind": "ENUM",
+      "enumValues": [
+        {
+          "name": "N",
+          "description": null
+        },
+        {
+          "name": "D",
+          "description": null
+        },
+        {
+          "name": "B",
+          "description": null
+        },
+        {
+          "name": "P",
+          "description": null
+        }
+      ]
+    },
+    "AddItemVersionInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents the input for adding an item version.",
+      "inputFields": [
+        {
+          "name": "database",
+          "type": "String",
+          "description": "The name of the item database."
+        },
+        {
+          "name": "itemId",
+          "type": "ID",
+          "description": "The item ID. If both ID and path parameters are specified, the path parameter is ignored."
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "description": "The item language."
+        },
+        {
+          "name": "path",
+          "type": "String",
+          "description": "The item path."
+        },
+        {
+          "name": "version",
+          "type": "Int",
+          "description": "The item version to use as the base for creating a new version. Default is latest version."
+        },
+        {
+          "name": "versionName",
+          "type": "String",
+          "description": "The name of the item version."
+        }
+      ]
+    },
+    "UpdateItemInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents the input for updating an item.",
+      "inputFields": [
+        {
+          "name": "database",
+          "type": "String",
+          "description": "The name of the item database."
+        },
+        {
+          "name": "fields",
+          "type": "[FieldValueInput]",
+          "description": "The field values"
+        },
+        {
+          "name": "itemId",
+          "type": "ID",
+          "description": "The ID of the item. If both ID and path parameters are specified, the path parameter is ignored."
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "description": "The item language."
+        },
+        {
+          "name": "path",
+          "type": "String",
+          "description": "The item path."
+        },
+        {
+          "name": "version",
+          "type": "Int",
+          "description": "The item version."
+        }
+      ]
+    },
+    "PublishItemInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents the input for publishing an item.",
+      "inputFields": [
+        {
+          "name": "displayName",
+          "type": "String",
+          "description": "The display name of the publish request."
+        },
+        {
+          "name": "languages",
+          "type": "[String!]!",
+          "description": "The publishing languages."
+        },
+        {
+          "name": "publishItemMode",
+          "type": "PublishItemMode!",
+          "description": "The publish item mode."
+        },
+        {
+          "name": "publishRelatedItems",
+          "type": "Boolean",
+          "description": "Indicates whether to publish related items."
+        },
+        {
+          "name": "publishSubItems",
+          "type": "Boolean",
+          "description": "Indicates whether to publish sub-items."
+        },
+        {
+          "name": "rootItemId",
+          "type": "ID",
+          "description": "The ID of the root item. If both ID and path parameters are specified, the path parameter is ignored."
+        },
+        {
+          "name": "rootItemIds",
+          "type": "[ID]",
+          "description": "The IDs of the root items. If both ID and path parameters are specified, the path parameter is ignored."
+        },
+        {
+          "name": "rootItemPath",
+          "type": "String",
+          "description": "The path of the root item."
+        },
+        {
+          "name": "rootItemPaths",
+          "type": "[String]",
+          "description": "The paths of the root items."
+        },
+        {
+          "name": "sourceDatabase",
+          "type": "String",
+          "description": "The source database name."
+        },
+        {
+          "name": "targetDatabases",
+          "type": "[String!]!",
+          "description": "The target databases name."
+        }
+      ]
+    },
+    "CreateItemInput": {
+      "kind": "INPUT_OBJECT",
+      "description": "Represents the input for creating an item.",
+      "inputFields": [
+        {
+          "name": "database",
+          "type": "String",
+          "description": "The name of the item database."
+        },
+        {
+          "name": "fields",
+          "type": "[FieldValueInput]",
+          "description": "The field values."
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "description": "The item language."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "description": "Name of the new item."
+        },
+        {
+          "name": "parent",
+          "type": "ID!",
+          "description": "The unique ID of the parent item."
+        },
+        {
+          "name": "templateId",
+          "type": "ID!",
+          "description": "The unique ID of the template used for creating the new item."
+        }
+      ]
+    },
+    "AddItemVersionPayload": {
+      "kind": "OBJECT",
+      "description": "The result of the add item version operation for the item.",
+      "fields": [
+        {
+          "name": "item",
+          "type": "Item",
+          "args": [],
+          "description": "The item in the new version."
+        }
+      ]
+    },
+    "UpdateItemPayload": {
+      "kind": "OBJECT",
+      "description": "The result of the update operation for the item.",
+      "fields": [
+        {
+          "name": "item",
+          "type": "Item",
+          "args": [],
+          "description": "The updated item."
+        }
+      ]
+    },
+    "PublishItemPayload": {
+      "kind": "OBJECT",
+      "description": "The result of the item publishing operation.",
+      "fields": [
+        {
+          "name": "operationId",
+          "type": "String",
+          "args": [],
+          "description": "The publishing operation ID. It can be used to track the progress of the publishing operation."
+        }
+      ]
+    },
+    "ItemPublish": {
+      "kind": "OBJECT",
+      "description": "Represents the item publishing information.",
+      "fields": [
+        {
+          "name": "hasPublishableVersion",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The item has publishable version."
+        },
+        {
+          "name": "hideVersion",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The item version can be published."
+        },
+        {
+          "name": "neverPublish",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Never publish the item."
+        },
+        {
+          "name": "validFrom",
+          "type": "DateTime!",
+          "args": [],
+          "description": "Valid from date of the item, expressed as UTC."
+        },
+        {
+          "name": "validTo",
+          "type": "DateTime!",
+          "args": [],
+          "description": "Valid to date of the item, expressed as UTC."
+        }
+      ]
+    },
+    "ItemAccess": {
+      "kind": "OBJECT",
+      "description": "Represents the item access rights for the current user.",
+      "fields": [
+        {
+          "name": "canAddBranch",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "branchId",
+              "type": "ID!"
+            }
+          ],
+          "description": "The user can add the provided branch to the item."
+        },
+        {
+          "name": "canAddTemplate",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "templateId",
+              "type": "ID!"
+            }
+          ],
+          "description": "The user can add the provided template to the item."
+        },
+        {
+          "name": "canAdmin",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can perform admin-level tasks on the item."
+        },
+        {
+          "name": "canCopyTo",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "destinationId",
+              "type": "ID!"
+            }
+          ],
+          "description": "The user can copy the item to the provided destination."
+        },
+        {
+          "name": "canCreate",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can create the item."
+        },
+        {
+          "name": "canDelete",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can delete the item."
+        },
+        {
+          "name": "canDuplicate",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can create a duplicate of the item."
+        },
+        {
+          "name": "canMoveTo",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "destinationId",
+              "type": "ID!"
+            }
+          ],
+          "description": "The user can move the item to the provided destination."
+        },
+        {
+          "name": "canPublish",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can publish the item."
+        },
+        {
+          "name": "canRead",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can read the item."
+        },
+        {
+          "name": "canReadLanguage",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can read the item in the current language."
+        },
+        {
+          "name": "canRemoveVersion",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can remove the current version of the item."
+        },
+        {
+          "name": "canRename",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can rename the item."
+        },
+        {
+          "name": "canWrite",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can write the item."
+        },
+        {
+          "name": "canWriteLanguage",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The user can write the item in the current language."
+        }
+      ]
+    },
+    "ItemLock": {
+      "kind": "OBJECT",
+      "description": "Represents the item locking information.",
+      "fields": [
+        {
+          "name": "isLocked",
+          "type": "Boolean!",
+          "args": [],
+          "description": "The item is locked."
+        },
+        {
+          "name": "lockedBy",
+          "type": "String",
+          "args": [],
+          "description": "The user who locks the item."
+        },
+        {
+          "name": "user",
+          "type": "ItemLockForUser",
+          "args": [
+            {
+              "name": "username",
+              "type": "String"
+            }
+          ],
+          "description": "Get user info of the item lock."
+        }
+      ]
+    },
+    "ItemWorkflow": {
+      "kind": "OBJECT",
+      "description": "Represents the item workflow.",
+      "fields": [
+        {
+          "name": "canEdit",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Determines whether the source item can be edited."
+        },
+        {
+          "name": "canSave",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Determines whether the source item can be saved."
+        },
+        {
+          "name": "workflow",
+          "type": "Workflow",
+          "args": [],
+          "description": "The workflow."
+        },
+        {
+          "name": "workflowState",
+          "type": "WorkflowState",
+          "args": [],
+          "description": "The current workflow state of the item."
+        }
+      ]
+    },
+    "ItemEdge": {
+      "kind": "OBJECT",
+      "description": "An edge in a connection.",
+      "fields": [
+        {
+          "name": "cursor",
+          "type": "String!",
+          "args": [],
+          "description": "A cursor for use in pagination."
+        },
+        {
+          "name": "node",
+          "type": "Item",
+          "args": [],
+          "description": "The item at the end of the edge."
+        }
+      ]
+    },
+    "ItemFieldEdge": {
+      "kind": "OBJECT",
+      "description": "An edge in a connection.",
+      "fields": [
+        {
+          "name": "cursor",
+          "type": "String!",
+          "args": [],
+          "description": "A cursor for use in pagination."
+        },
+        {
+          "name": "node",
+          "type": "ItemField",
+          "args": [],
+          "description": "The item at the end of the edge."
+        }
+      ]
+    },
+    "PageInfo": {
+      "kind": "OBJECT",
+      "description": "Information about pagination in a connection.",
+      "fields": [
+        {
+          "name": "endCursor",
+          "type": "String",
+          "args": [],
+          "description": "When paginating forwards, the cursor to continue."
+        },
+        {
+          "name": "hasNextPage",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Indicates whether more edges exist following the set defined by the clients arguments."
+        },
+        {
+          "name": "hasPreviousPage",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Indicates whether more edges exist prior the set defined by the clients arguments."
+        },
+        {
+          "name": "startCursor",
+          "type": "String",
+          "args": [],
+          "description": "When paginating backwards, the cursor to continue."
+        }
+      ]
+    },
+    "Language": {
+      "kind": "OBJECT",
+      "description": "Represents a content language used in Sitecore.",
+      "fields": [
+        {
+          "name": "charset",
+          "type": "String",
+          "args": [
+            {
+              "name": "database",
+              "type": "String"
+            }
+          ],
+          "description": "The charset of the language."
+        },
+        {
+          "name": "displayName",
+          "type": "String",
+          "args": [],
+          "description": "A human readable name of the language."
+        },
+        {
+          "name": "englishName",
+          "type": "String",
+          "args": [],
+          "description": "Gets the culture name in the format languagefull [country/regionfull] in English."
+        },
+        {
+          "name": "iso",
+          "type": "String",
+          "args": [],
+          "description": "The Two Letter ISO code of the language."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "The culture name in the languagecode2-country/regioncode2 format."
+        },
+        {
+          "name": "nativeName",
+          "type": "String",
+          "args": [],
+          "description": "The culture name, consisting of the language, the country/region, and the optional script, that the culture is set to display."
+        }
+      ]
+    },
+    "Query": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "archivedItem",
+          "type": "ArchivedItem",
+          "args": [
+            {
+              "name": "where",
+              "type": "ArchiveItemQueryInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "archivedItems",
+          "type": "[ArchivedItem]",
+          "args": [
+            {
+              "name": "archiveName",
+              "type": "String"
+            },
+            {
+              "name": "pageIndex",
+              "type": "Int"
+            },
+            {
+              "name": "pageSize",
+              "type": "Int"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "availableRenderings",
+          "type": "[RenderingItemType]",
+          "args": [
+            {
+              "name": "where",
+              "type": "GetRenderingsInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "currentUser",
+          "type": "User",
+          "args": [],
+          "description": null
+        },
+        {
+          "name": "databases",
+          "type": "DatabaseConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "dataSourceTemplates",
+          "type": "DataSourceTemplatesType",
+          "args": [
+            {
+              "name": "input",
+              "type": "DefaultInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "domain",
+          "type": "Domain",
+          "args": [
+            {
+              "name": "domainName",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "domains",
+          "type": "DomainConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "fallbackLanguage",
+          "type": "Language",
+          "args": [
+            {
+              "name": "databaseName",
+              "type": "String"
+            },
+            {
+              "name": "name",
+              "type": "String!"
+            }
+          ],
+          "description": "Gets the fallback language for a specified language."
+        },
+        {
+          "name": "index",
+          "type": "Index",
+          "args": [
+            {
+              "name": "indexName",
+              "type": "String!"
+            }
+          ],
+          "description": "Get a specific search index."
+        },
+        {
+          "name": "indexes",
+          "type": "IndexConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "indexNames",
+              "type": "[String]"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": "Get search indexes. If the indexNames input parameter is null, get all search indexes."
+        },
+        {
+          "name": "isJobQueued",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "jobName",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "isJobRunning",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "jobName",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "item",
+          "type": "Item",
+          "args": [
+            {
+              "name": "where",
+              "type": "ItemQueryInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "itemTemplate",
+          "type": "ItemTemplate",
+          "args": [
+            {
+              "name": "where",
+              "type": "ItemTemplateQueryInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "itemTemplates",
+          "type": "ItemTemplateConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "where",
+              "type": "ItemTemplateQueryInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "job",
+          "type": "Job",
+          "args": [
+            {
+              "name": "input",
+              "type": "JobQueryInput!"
+            }
+          ],
+          "description": "Get a specific job by job name or job handle."
+        },
+        {
+          "name": "jobs",
+          "type": "JobConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "input",
+              "type": "JobQueryInput"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": "Get all jobs if no input is specified. The jobName parameter accepts StartWith/EndWith/Wrapped in (*)."
+        },
+        {
+          "name": "language",
+          "type": "Language",
+          "args": [
+            {
+              "name": "name",
+              "type": "String!"
+            }
+          ],
+          "description": "Gets the specified language."
+        },
+        {
+          "name": "languageItem",
+          "type": "Item",
+          "args": [
+            {
+              "name": "databaseName",
+              "type": "String"
+            },
+            {
+              "name": "name",
+              "type": "String!"
+            }
+          ],
+          "description": "Gets the specified language item."
+        },
+        {
+          "name": "languages",
+          "type": "LanguageConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "databaseName",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": "Get all the languages in the specified database for the current user."
+        },
+        {
+          "name": "mediaItem",
+          "type": "MediaItem",
+          "args": [
+            {
+              "name": "where",
+              "type": "MediaItemQueryInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "meta",
+          "type": "ApiMeta!",
+          "args": [],
+          "description": "API meta"
+        },
+        {
+          "name": "pageBranchesRoots",
+          "type": "[PageBranchesRootItemType]",
+          "args": [
+            {
+              "name": "where",
+              "type": "DefaultPageBranchesInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "pageDesigns",
+          "type": "[PageDesignType]",
+          "args": [
+            {
+              "name": "where",
+              "type": "DefaultPresentationInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "pageDesignsRoots",
+          "type": "[PageDesignsRootType]",
+          "args": [
+            {
+              "name": "where",
+              "type": "DefaultPresentationInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "parseRule",
+          "type": "RuleSetRule",
+          "args": [
+            {
+              "name": "rule",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "parseRuleSet",
+          "type": "RuleSet",
+          "args": [
+            {
+              "name": "ruleSet",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "partialDesigns",
+          "type": "[PartialDesignType]",
+          "args": [
+            {
+              "name": "where",
+              "type": "DefaultPresentationInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "partialDesignsRoots",
+          "type": "[PartialDesignsRootType]",
+          "args": [
+            {
+              "name": "where",
+              "type": "DefaultPresentationInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "publishingQueueEntries",
+          "type": "PublishingQueueEntryResult",
+          "args": [
+            {
+              "name": "query",
+              "type": "PublishingQueueEntriesQueryInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "publishingStatus",
+          "type": "PublishingStatus",
+          "args": [
+            {
+              "name": "publishingOperationId",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "publishingTargets",
+          "type": "[PublishingTarget]",
+          "args": [],
+          "description": null
+        },
+        {
+          "name": "renderings",
+          "type": "[RenderingItemType]",
+          "args": [
+            {
+              "name": "where",
+              "type": "GetRenderingsInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "role",
+          "type": "Role",
+          "args": [
+            {
+              "name": "roleName",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "roles",
+          "type": "RoleConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "rule",
+          "type": "Rule",
+          "args": [
+            {
+              "name": "query",
+              "type": "RulesQueryInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "ruleSet",
+          "type": "RuleSet",
+          "args": [
+            {
+              "name": "query",
+              "type": "RuleItemQueryInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "ruleTemplate",
+          "type": "TemplateFieldRule",
+          "args": [
+            {
+              "name": "query",
+              "type": "TemplateFieldRuleQueryInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "search",
+          "type": "SearchResult!",
+          "args": [
+            {
+              "name": "query",
+              "type": "SearchQueryInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "selectionProfiles",
+          "type": "UserProfileSelectorConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "site",
+          "type": "Site",
+          "args": [
+            {
+              "name": "siteName",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "siteCollections",
+          "type": "[SiteCollectionType]",
+          "args": [
+            {
+              "name": "input",
+              "type": "DefaultSolutionInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "siteCollectionsResults",
+          "type": "SiteCollectionTypeConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "input",
+              "type": "DefaultSolutionInput"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "sites",
+          "type": "[Site]",
+          "args": [
+            {
+              "name": "includeSystemSites",
+              "type": "Boolean"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "solutionSites",
+          "type": "[SolutionSiteType]",
+          "args": [
+            {
+              "name": "input",
+              "type": "SolutionSitesInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "solutionSitesSearch",
+          "type": "SolutionSiteWithRootTypeConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "input",
+              "type": "SolutionSitesSearchInput"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "solutionSitesWithRoot",
+          "type": "SolutionSiteWithRootTypeConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "input",
+              "type": "SolutionSitesInput"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "solutionTemplates",
+          "type": "[SolutionTemplateType]",
+          "args": [
+            {
+              "name": "input",
+              "type": "DefaultSolutionInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "supportedLanguages",
+          "type": "SupportedLanguageConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": "Gets all the languages that are supported by Sitecore."
+        },
+        {
+          "name": "tenantTemplates",
+          "type": "[TenantTemplateType]",
+          "args": [
+            {
+              "name": "where",
+              "type": "TenantTemplatesInput"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "user",
+          "type": "User",
+          "args": [
+            {
+              "name": "userName",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "users",
+          "type": "UserConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "workflow",
+          "type": "Workflow",
+          "args": [
+            {
+              "name": "where",
+              "type": "WorkflowIdOrItemQueryInput!"
+            }
+          ],
+          "description": "Get a specific workflow."
+        },
+        {
+          "name": "workflows",
+          "type": "WorkflowConnection",
+          "args": [
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "before",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "PaginationAmount"
+            },
+            {
+              "name": "last",
+              "type": "PaginationAmount"
+            }
+          ],
+          "description": "Get all configured workflows."
+        }
+      ]
+    },
+    "Mutation": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "addAccountsToRole",
+          "type": "AddAccountsToRolePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "AddAccountsToRoleInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "addItemVersion",
+          "type": "AddItemVersionPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "AddItemVersionInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "addLanguage",
+          "type": "AddLanguagePayload!",
+          "args": [
+            {
+              "name": "input",
+              "type": "AddLanguageInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "addRoleToRoles",
+          "type": "AddRoleToRolesPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "AddRoleToRolesInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "archiveItem",
+          "type": "ArchiveItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "ArchiveItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "archiveVersion",
+          "type": "ArchiveVersionPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "ArchiveVersionInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "cancelPublishing",
+          "type": "CancelPublishingPayload",
+          "args": [
+            {
+              "name": "publishingOperationId",
+              "type": "String!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "changeUserPassword",
+          "type": "ChangeUserPasswordPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "ChangeUserPasswordInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "cleanUpDatabases",
+          "type": "CleanUpDatabasesPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CleanUpDatabasesInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "cloneSite",
+          "type": "CloneSitePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CloneSiteInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "configurePageDesigns",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "input",
+              "type": "ConfigurePageDesignsInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "copyItem",
+          "type": "CopyItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CopyItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "createDomain",
+          "type": "CreateDomainPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateDomainInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "createItem",
+          "type": "CreateItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "createItemFromBranch",
+          "type": "CreateItemFromBranchPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateItemFromBranchInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "createItemTemplate",
+          "type": "CreateItemTemplatePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateItemTemplateInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "createItemTemplateFolder",
+          "type": "CreateItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateItemTemplateFolderInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "createRole",
+          "type": "CreateRolePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateRoleInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "createSite",
+          "type": "CreateSitePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateSiteInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "createSiteCollection",
+          "type": "CreateSiteCollectionPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateSiteCollectionInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "createUser",
+          "type": "CreateUserPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateUserInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteAccountsFromRole",
+          "type": "DeleteAccountsFromRolePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteAccountsFromRoleInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteArchivedItem",
+          "type": "DeleteArchivedItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteArchivedItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteArchivedVersion",
+          "type": "DeleteArchivedVersionPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteArchivedVersionInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteDomain",
+          "type": "DeleteDomainPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteDomainInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteItem",
+          "type": "DeleteItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteItemTemplate",
+          "type": "DeleteItemTemplatePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteItemTemplateInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteItemVersion",
+          "type": "DeleteItemVersionPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteItemVersionInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteLanguage",
+          "type": "DeleteLanguagePayload!",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteLanguageInput!"
+            }
+          ],
+          "description": "Delete a specific language. This will remove ALL versions of this language from every item."
+        },
+        {
+          "name": "deleteLanguages",
+          "type": "DeleteLanguagesPayload!",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteLanguagesInput!"
+            }
+          ],
+          "description": "Delete a set of languages. This will remove ALL versions of those languages from every item."
+        },
+        {
+          "name": "deleteRole",
+          "type": "DeleteRolePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteRoleInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteRoleFromRoles",
+          "type": "DeleteRoleFromRolesPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteRoleFromRolesInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "deleteUser",
+          "type": "DeleteUserPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DeleteUserInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "disableUser",
+          "type": "DisableUserPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "DisableUserInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "emptyArchive",
+          "type": "EmptyArchivePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "EmptyArchiveInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "enableUser",
+          "type": "EnableUserPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "EnableUserInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "executeWorkflowCommand",
+          "type": "ExecuteWorkflowCommandPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "ExecuteWorkflowCommandInput!"
+            }
+          ],
+          "description": "Executes the workflow command for the specified item."
+        },
+        {
+          "name": "moveItem",
+          "type": "MoveItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "MoveItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "populateManagedSchema",
+          "type": "PopulateManagedSchemaPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "PopulateManagedSchemaInput"
+            }
+          ],
+          "description": "Execute populate managed schema operation. If the indexNames input parameter is null, Populate Managed Schema for all indexes."
+        },
+        {
+          "name": "publishItem",
+          "type": "PublishItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "PublishItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "publishLanguageSpecificItems",
+          "type": "PublishItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "PublishLanguageSpecificItemsInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "publishSite",
+          "type": "PublishSitePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "PublishSiteInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "publishWithOptions",
+          "type": "PublishWithOptionsPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "PublishWithOptionsInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "rebuildIndexes",
+          "type": "RebuildIndexesPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "RebuildIndexesInput"
+            }
+          ],
+          "description": "Execute rebuild search index operation. If the indexNames input parameter is null, Rebuild for all search indexes."
+        },
+        {
+          "name": "rebuildLinkDatabase",
+          "type": "RebuildLinkDatabasePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "RebuildLinkDatabaseInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "removeSite",
+          "type": "RemoveSitePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "RemoveSiteInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "removeSiteCollection",
+          "type": "RemoveSiteCollectionPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "RemoveSiteCollectionInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "renameItem",
+          "type": "RenameItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "RenameItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "renameSite",
+          "type": "RenameSitePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "RenameSiteInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "renameSiteCollection",
+          "type": "RenameSiteCollectionPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "RenameSiteCollectionInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "resetUserSettings",
+          "type": "ResetUserSettingsPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "ResetUserSettingsInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "restoreArchivedItem",
+          "type": "RestoreArchivedItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "RestoreArchivedItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "restoreArchivedVersion",
+          "type": "RestoreArchivedVersionPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "RestoreArchivedVersionInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "scaffoldSolution",
+          "type": "CreateSolutionSitePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "CreateSolutionSiteInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "setItemArchiveDate",
+          "type": "SetItemArchiveDatePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "SetItemArchiveDateInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "setVersionArchiveDate",
+          "type": "SetVersionArchiveDatePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "SetVersionArchiveDateInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "startWorkflow",
+          "type": "StartWorkflowPayload!",
+          "args": [
+            {
+              "name": "input",
+              "type": "StartWorkflowInput!"
+            }
+          ],
+          "description": "Starts the workflow for the specified item. When executed, it will set the state to the initial state and clear all workflow history"
+        },
+        {
+          "name": "translateItem",
+          "type": "TranslateItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "TranslateItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "translatePage",
+          "type": "TranslatePagePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "TranslatePageInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "translateSite",
+          "type": "TranslateSitePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "TranslateSiteInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "unlockUser",
+          "type": "UnlockUserPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "UnlockUserInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "updateItem",
+          "type": "UpdateItemPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "UpdateItemInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "updateItemTemplate",
+          "type": "UpdateItemTemplatePayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "UpdateItemTemplateInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "updateSolutionSitesPos",
+          "type": "SetPosPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "UpdateSolutionSitesPosInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "updateUser",
+          "type": "UpdateUserPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "UpdateUserInput!"
+            }
+          ],
+          "description": null
+        },
+        {
+          "name": "uploadMedia",
+          "type": "UploadMediaPayload",
+          "args": [
+            {
+              "name": "input",
+              "type": "UploadMediaInput!"
+            }
+          ],
+          "description": null
+        }
+      ]
+    }
+  }
+}

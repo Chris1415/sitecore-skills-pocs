@@ -1,0 +1,527 @@
+{
+  "queryType": "Query",
+  "mutationType": null,
+  "totalTypes": 872,
+  "types": {
+    "Item": {
+      "kind": "INTERFACE",
+      "fields": [
+        {
+          "name": "ancestors",
+          "type": "[Item]!",
+          "args": [
+            {
+              "name": "hasLayout",
+              "type": "Boolean"
+            },
+            {
+              "name": "includeTemplateIDs",
+              "type": "[String]"
+            }
+          ],
+          "description": "Ancestors in the content hierarchy."
+        },
+        {
+          "name": "children",
+          "type": "ItemSearchResults",
+          "args": [
+            {
+              "name": "hasLayout",
+              "type": "Boolean"
+            },
+            {
+              "name": "includeTemplateIDs",
+              "type": "[String]"
+            },
+            {
+              "name": "first",
+              "type": "Int"
+            },
+            {
+              "name": "after",
+              "type": "String"
+            }
+          ],
+          "description": "Children in the content hierarchy."
+        },
+        {
+          "name": "displayName",
+          "type": "String",
+          "args": [],
+          "description": "The display name of the item."
+        },
+        {
+          "name": "field",
+          "type": "ItemField",
+          "args": [
+            {
+              "name": "name",
+              "type": "String!"
+            }
+          ],
+          "description": "Single field by name or ID."
+        },
+        {
+          "name": "fields",
+          "type": "[ItemField]!",
+          "args": [
+            {
+              "name": "ownFields",
+              "type": "Boolean"
+            }
+          ],
+          "description": "All item fields."
+        },
+        {
+          "name": "hasChildren",
+          "type": "Boolean!",
+          "args": [
+            {
+              "name": "hasLayout",
+              "type": "Boolean"
+            },
+            {
+              "name": "includeTemplateIDs",
+              "type": "[String]"
+            }
+          ],
+          "description": "Indicates whether the item has children."
+        },
+        {
+          "name": "id",
+          "type": "ID!",
+          "args": [
+            {
+              "name": "format",
+              "type": "String"
+            }
+          ],
+          "description": "Unique ID of the item."
+        },
+        {
+          "name": "language",
+          "type": "ItemLanguage!",
+          "args": [],
+          "description": "Information about the language."
+        },
+        {
+          "name": "languages",
+          "type": "[Item]!",
+          "args": [],
+          "description": "Item information for every language defined for the item."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "The name of the item."
+        },
+        {
+          "name": "parent",
+          "type": "Item",
+          "args": [],
+          "description": "Parent in the content hierarchy."
+        },
+        {
+          "name": "path",
+          "type": "String!",
+          "args": [],
+          "description": "The full path of the item in the content tree."
+        },
+        {
+          "name": "personalization",
+          "type": "ItemPersonalization",
+          "args": [],
+          "description": "personalization info"
+        },
+        {
+          "name": "rendered",
+          "type": "JSON!",
+          "args": [],
+          "description": "Item presentation details."
+        },
+        {
+          "name": "template",
+          "type": "ItemTemplate!",
+          "args": [],
+          "description": "Information about the template."
+        },
+        {
+          "name": "url",
+          "type": "ItemUrl!",
+          "args": [],
+          "description": "Location object properties. For example, 'hostName', 'path'."
+        },
+        {
+          "name": "version",
+          "type": "Int!",
+          "args": [],
+          "description": "The newest version of the item."
+        }
+      ]
+    },
+    "ItemField": {
+      "kind": "INTERFACE",
+      "fields": [
+        {
+          "name": "definition",
+          "type": "ItemTemplateField",
+          "args": [],
+          "description": "Properties describing the field."
+        },
+        {
+          "name": "id",
+          "type": "ID!",
+          "args": [
+            {
+              "name": "format",
+              "type": "String"
+            }
+          ],
+          "description": "The ID of the field."
+        },
+        {
+          "name": "jsonValue",
+          "type": "JSON!",
+          "args": [],
+          "description": "Raw value serialized into JSON format. For example, for an image field, it contains image specific properties such as 'src' and 'alt'."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "The name of the field."
+        },
+        {
+          "name": "value",
+          "type": "String",
+          "args": [],
+          "description": "Raw value of the field."
+        }
+      ]
+    },
+    "ItemTemplate": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "baseTemplates",
+          "type": "[ItemTemplate]",
+          "args": [],
+          "description": "List of inherited templates."
+        },
+        {
+          "name": "fields",
+          "type": "[ItemTemplateField]",
+          "args": [],
+          "description": "The list of the template fields, including inherited fields."
+        },
+        {
+          "name": "id",
+          "type": "ID!",
+          "args": [
+            {
+              "name": "format",
+              "type": "String"
+            }
+          ],
+          "description": "The ID of the template."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "The name of the template."
+        },
+        {
+          "name": "ownFields",
+          "type": "[ItemTemplateField]",
+          "args": [],
+          "description": "The list of template fields defined for this template (not inherited)."
+        }
+      ]
+    },
+    "ItemSearchResults": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "pageInfo",
+          "type": "PageInfo!",
+          "args": [],
+          "description": "Pagination info."
+        },
+        {
+          "name": "results",
+          "type": "[Item]!",
+          "args": [],
+          "description": "Found items."
+        },
+        {
+          "name": "total",
+          "type": "Int!",
+          "args": [],
+          "description": "Total number of items."
+        }
+      ]
+    },
+    "ItemSearchPredicateInput": {
+      "kind": "INPUT_OBJECT",
+      "inputFields": [
+        {
+          "name": "name",
+          "type": "String",
+          "description": "The name of the field."
+        },
+        {
+          "name": "value",
+          "type": "String",
+          "description": "The value of the field."
+        },
+        {
+          "name": "AND",
+          "type": "[ItemSearchPredicateInput]",
+          "description": "AND logical operator."
+        },
+        {
+          "name": "OR",
+          "type": "[ItemSearchPredicateInput]",
+          "description": "OR logical operator."
+        },
+        {
+          "name": "operator",
+          "type": "ItemSearchOperator",
+          "description": "A predicate (for example, EQ, CONTAINS, NCONTAINS or NEQ)."
+        }
+      ]
+    },
+    "ItemSearchOrderByInput": {
+      "kind": "INPUT_OBJECT",
+      "inputFields": [
+        {
+          "name": "name",
+          "type": "String!",
+          "description": "The name of the field to use for sorting."
+        },
+        {
+          "name": "direction",
+          "type": "OrderByDirection",
+          "description": "Sorting rule direction (ASC or DESC)."
+        }
+      ]
+    },
+    "ItemLanguage": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "displayName",
+          "type": "String!",
+          "args": [],
+          "description": "A mapping of the englishName to the nativeName. For example, 'Spanish (Argentina) : espa\u00c3\u00b1ol (Argentina)'."
+        },
+        {
+          "name": "englishName",
+          "type": "String!",
+          "args": [],
+          "description": "The name of the language in English."
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "args": [],
+          "description": "The language and locale. For example, 'es-AR'."
+        },
+        {
+          "name": "nativeName",
+          "type": "String!",
+          "args": [],
+          "description": "The native name of the language."
+        }
+      ]
+    },
+    "ItemPersonalization": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "variantIds",
+          "type": "[String]!",
+          "args": [],
+          "description": null
+        }
+      ]
+    },
+    "ItemUrl": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "hostName",
+          "type": "String!",
+          "args": [],
+          "description": "The host name of the item\u00e2\u20ac\u2122s site, as resolved during export."
+        },
+        {
+          "name": "path",
+          "type": "String!",
+          "args": [],
+          "description": "The URL path of the item (without scheme and domain name)."
+        },
+        {
+          "name": "scheme",
+          "type": "String!",
+          "args": [],
+          "description": "The scheme (http or https) of the item\u00e2\u20ac\u2122s site, as resolved during export."
+        },
+        {
+          "name": "siteName",
+          "type": "String!",
+          "args": [],
+          "description": "The name of the resolved site of the item."
+        },
+        {
+          "name": "url",
+          "type": "String!",
+          "args": [],
+          "description": "The full URL of the item, as resolved during export."
+        }
+      ]
+    },
+    "LayoutData": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "item",
+          "type": "Item",
+          "args": [],
+          "description": "Item for getting presentation details/layout data."
+        }
+      ]
+    },
+    "SiteData": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "allSiteInfo",
+          "type": "SiteInfoResult",
+          "args": [
+            {
+              "name": "pageSize",
+              "type": "Int"
+            },
+            {
+              "name": "pageNumber",
+              "type": "Int"
+            }
+          ],
+          "description": "Basic information about available content sites. Offset paging supports up to 10,000 sites."
+        },
+        {
+          "name": "siteInfo",
+          "type": "SiteInfo",
+          "args": [
+            {
+              "name": "site",
+              "type": "String!"
+            }
+          ],
+          "description": "Basic information about the site."
+        },
+        {
+          "name": "siteInfoCollection",
+          "type": "[SiteInfo]!",
+          "args": [],
+          "description": "Basic information about available content sites."
+        }
+      ]
+    },
+    "JSON": {
+      "kind": "SCALAR"
+    },
+    "PageInfo": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "endCursor",
+          "type": "String!",
+          "args": [],
+          "description": "When paginating forwards, the cursor to continue."
+        },
+        {
+          "name": "hasNext",
+          "type": "Boolean!",
+          "args": [],
+          "description": "Indicates whether more pages exist."
+        }
+      ]
+    },
+    "Query": {
+      "kind": "OBJECT",
+      "fields": [
+        {
+          "name": "item",
+          "type": "Item",
+          "args": [
+            {
+              "name": "path",
+              "type": "String"
+            },
+            {
+              "name": "language",
+              "type": "String!"
+            },
+            {
+              "name": "version",
+              "type": "String"
+            }
+          ],
+          "description": "Allows querying for information about an item in the content tree."
+        },
+        {
+          "name": "layout",
+          "type": "LayoutData",
+          "args": [
+            {
+              "name": "site",
+              "type": "String!"
+            },
+            {
+              "name": "routePath",
+              "type": "String!"
+            },
+            {
+              "name": "language",
+              "type": "String!"
+            }
+          ],
+          "description": "Allows querying presentation details/layout data for the item."
+        },
+        {
+          "name": "search",
+          "type": "ItemSearchResults",
+          "args": [
+            {
+              "name": "where",
+              "type": "ItemSearchPredicateInput!"
+            },
+            {
+              "name": "after",
+              "type": "String"
+            },
+            {
+              "name": "first",
+              "type": "Int"
+            },
+            {
+              "name": "orderBy",
+              "type": "ItemSearchOrderByInput"
+            }
+          ],
+          "description": "Allows querying for items based on provided criteria."
+        },
+        {
+          "name": "site",
+          "type": "SiteData",
+          "args": [],
+          "description": "Allows querying for information about content sites."
+        }
+      ]
+    }
+  }
+}

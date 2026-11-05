@@ -1,0 +1,16 @@
+{
+  "note": "Public scrub patterns. Private ones (tenant ids, brands, private repos) come from the SCRUB_PATTERNS secret and are never committed. Each rule: category, pattern (JS RegExp source), optional flags.",
+  "rules": [
+    { "category": "abs-path-windows", "pattern": "\\b[A-Za-z]:[\\\\/]+(Users|Projects)[\\\\/]+[A-Za-z0-9._-]+", "flags": "i" },
+    { "category": "abs-path-unix-home", "pattern": "(?<![\\w.])/(Users|home)/(?!user\\b|you\\b|me\\b|runner\\b)[a-z][a-z0-9._-]+/", "flags": "" },
+    { "category": "private-key-block", "pattern": "-----BEGIN [A-Z ]*PRIVATE KEY-----", "flags": "" },
+    { "category": "old-product-name", "pattern": "\\bXM Cloud\\b", "flags": "i" },
+    { "category": "real-org-id", "pattern": "\\borg_[A-Za-z0-9]{12,}\\b", "flags": "" },
+    { "category": "private-framework-name", "pattern": "hahn-?solo", "flags": "i" },
+    { "category": "private-framework-rule", "pattern": "\\b[Rr]ule `?(40|50|8[0-9])\\b", "flags": "" },
+    { "category": "private-framework-gate", "pattern": "\\bgo_live\\b|\\bdelivery_visibility\\b", "flags": "" },
+    { "category": "private-framework-id", "pattern": "\\b(PRD|FRD)-\\d{3}\\b|\\bADR-\\d{4}\\b", "flags": "" },
+    { "category": "private-framework-command", "pattern": "(?<![\\w/.}-])/(create-prd|test-content|sync-sitecoreai-apis)\\b", "flags": "" },
+    { "category": "private-memory-note", "pattern": "\\b(reference|feedback)_(sitecore|content_sdk|marketplace|blok)_[a-z]+", "flags": "" }
+  ]
+}

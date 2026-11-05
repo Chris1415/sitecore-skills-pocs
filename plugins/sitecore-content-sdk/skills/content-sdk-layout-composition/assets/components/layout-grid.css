@@ -1,0 +1,19 @@
+/* Preset CSS for the LayoutGrid template. Plain CSS: the preset tokens arrive from the CM.
+ * Tracks are minmax(0, Nfr) so a slot can shrink; a preset must still stay wide enough for the
+ * components authors drop in (a 174px bento track overflowed with an ordinary contact block). */
+@layer components {
+  .layout-grid { display: grid; gap: var(--layout-grid-gap, 1.5rem); grid-template-columns: minmax(0, 1fr); }
+  .layout-grid__slot { min-width: 0; }
+  .layout-grid__slot > .sc-jss-empty-placeholder { min-height: 6rem; }
+  @media (min-width: 768px) {
+    .layout-grid--halves { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .layout-grid--two-one { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+    .layout-grid--thirds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .layout-grid--bento-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .layout-grid--bento-5 > .layout-grid__slot--1 { grid-column: span 2; }
+  }
+  @media (min-width: 1024px) {
+    .layout-grid--bento-5 { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: auto auto; }
+    .layout-grid--bento-5 > .layout-grid__slot--1 { grid-row: span 2; }
+  }
+}

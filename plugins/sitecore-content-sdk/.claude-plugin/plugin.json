@@ -1,0 +1,18 @@
+{
+  "name": "sitecore-content-sdk",
+  "displayName": "Sitecore Content SDK - Core",
+  "description": "Router-agnostic Content SDK essentials plus the Sitecore side of a component: troubleshooting hub, feature planner, component review, create a rendering, list and navigation components, collection data models, icons, layout composition, field usage, resolvers, personalization, search, consent, upgrades. Install with a router plugin.",
+  "version": "0.20.1",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Christian Hahn"
+  },
+  "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "repository": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "keywords": [
+    "sitecore",
+    "content-sdk",
+    "nextjs",
+    "xm-cloud"
+  ]
+}

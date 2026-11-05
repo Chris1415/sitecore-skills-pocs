@@ -1,0 +1,5 @@
+{
+  "_captured": "2026-10-02, POST /v1/search and /v1/search/suggest with a REAL live or preview context id and config.id = 00000000-0000-0000-0000-000000000000. Same body for both endpoints, four environments.",
+  "status": 404,
+  "body": { "errors": [ { "message": "no search index found for config 00000000-0000-0000-0000-000000000000", "code": 404 } ] }
+}

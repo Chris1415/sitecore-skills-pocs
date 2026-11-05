@@ -1,0 +1,30 @@
+{
+  "_about": "Probe P7 (2026-10-02) seeded defects, re-expressed as Authoring/Edge facts: one throwaway page + its Data folder, a never-existing GUID {5E6D0C1A-0000-4000-8000-00000000DEAD}. Expected: L1 internal-no-id (P0), L1 link-target-missing, L3 reference-missing x2 (NavigationClass, SxaTags), L4 datasource-missing.",
+  "root": "/sitecore/content/Demo-Collection/Demo-Site/Home/components-preview/doctor-seed",
+  "inventory": [
+    { "itemId": "017243944c864afeb0132076266ebfc2", "path": "/sitecore/content/Demo-Collection/Demo-Site/Home/components-preview/doctor-seed", "templateName": "Editorial Page", "templateId": "a1" },
+    { "itemId": "d4aef0fc7b5e4d70a6867b1513a55ee0", "path": "/sitecore/content/Demo-Collection/Demo-Site/Home/components-preview/doctor-seed/Data", "templateName": "Data Folder", "templateId": "a2" },
+    { "itemId": "ed5aad07156f468c85d684f4ce321fd2", "path": "/sitecore/content/Demo-Collection/Demo-Site/Home/components-preview/doctor-seed/Data/link-missing-target", "templateName": "Nav Link", "templateId": "a3" },
+    { "itemId": "6bf719f027c4473fa779bb686cf340d6", "path": "/sitecore/content/Demo-Collection/Demo-Site/Home/components-preview/doctor-seed/Data/link-no-id", "templateName": "Nav Link", "templateId": "a3" }
+  ],
+  "items": {
+    "017243944c864afeb0132076266ebfc2": { "hasPresentation": true, "fields": [
+      { "name": "Title", "value": "doctor seed (throwaway)", "typeKey": "single-line text" },
+      { "name": "NavigationClass", "value": "{5E6D0C1A-0000-4000-8000-00000000DEAD}", "typeKey": "droplink" },
+      { "name": "SxaTags", "value": "{5E6D0C1A-0000-4000-8000-00000000DEAD}|{AAAAAAAA-1111-4111-8111-000000000001}", "typeKey": "tag treelist" },
+      { "name": "__Renderings", "value": "<r xmlns:p=\"p\" xmlns:s=\"s\" p:p=\"1\"><d id=\"{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}\" l=\"{96E5F4BA-A2CF-4A4C-A4E7-64DA88226362}\"><r uid=\"{5E6D0C1A-0000-4000-8000-000000000001}\" s:id=\"{BBBBBBBB-2222-4222-8222-000000000001}\" s:ph=\"headless-main\" s:ds=\"{5E6D0C1A-0000-4000-8000-00000000DEAD}\" s:par=\"\" /><r uid=\"{5E6D0C1A-0000-4000-8000-000000000002}\" s:id=\"{BBBBBBBB-2222-4222-8222-000000000001}\" s:ph=\"headless-main\" s:ds=\"{ED5AAD07-156F-468C-85D6-84F4CE321FD2}\" s:par=\"\" /></d></r>", "typeKey": "layout" }
+    ] },
+    "d4aef0fc7b5e4d70a6867b1513a55ee0": { "hasPresentation": false, "fields": [] },
+    "ed5aad07156f468c85d684f4ce321fd2": { "hasPresentation": false, "fields": [ { "name": "Link", "value": "<link text=\"dead\" linktype=\"internal\" id=\"{5E6D0C1A-0000-4000-8000-00000000DEAD}\" />", "typeKey": "general link" } ] },
+    "6bf719f027c4473fa779bb686cf340d6": { "hasPresentation": false, "fields": [ { "name": "Link", "value": "<link text=\"noid\" linktype=\"internal\" url=\"/destinations\" />", "typeKey": "general link" } ] }
+  },
+  "existing": {
+    "{AAAAAAAA-1111-4111-8111-000000000001}": "/sitecore/content/Demo-Collection/Demo-Site/Settings/Tags/Featured",
+    "{BBBBBBBB-2222-4222-8222-000000000001}": "/sitecore/layout/Renderings/Project/Demo/NavLink",
+    "{ED5AAD07-156F-468C-85D6-84F4CE321FD2}": "/sitecore/content/Demo-Collection/Demo-Site/Home/components-preview/doctor-seed/Data/link-missing-target"
+  },
+  "published": [],
+  "expect": [
+    ["L1", "P0"], ["L1", "P1"], ["L3", "P1"], ["L3", "P1"], ["L4", "P1"]
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "sitecore-setup",
+  "description": "The scaffold decision tree plus the per-target scaffolds for Content SDK head apps and both Marketplace app shapes. Cross-domain by design.",
+  "version": "0.6.0",
+  "author": {
+    "name": "Christian Hahn"
+  },
+  "homepage": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "repository": "https://github.com/Chris1415/sitecore-skills-pocs",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sitecore",
+    "scaffold",
+    "setup",
+    "content-sdk",
+    "marketplace",
+    "nextjs"
+  ]
+}

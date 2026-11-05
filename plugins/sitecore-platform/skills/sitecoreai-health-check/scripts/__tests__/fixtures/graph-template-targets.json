@@ -1,0 +1,22 @@
+{
+  "_about": "Probe P5 false-positive class: published site Settings referencing /sitecore/templates and /sitecore/layout items (never on Edge) must NOT be L5. A content target that is unpublished MUST be L5.",
+  "root": "/sitecore/content/Demo-Collection/Demo-Site/Settings",
+  "inventory": [
+    { "itemId": "e0e0e0e0e0e04e0e8e0e0e0e0e0e0001", "path": "/sitecore/content/Demo-Collection/Demo-Site/Settings", "templateName": "Site Settings", "templateId": "a9" }
+  ],
+  "items": {
+    "e0e0e0e0e0e04e0e8e0e0e0e0e0e0001": { "hasPresentation": false, "fields": [
+      { "name": "Templates", "value": "{F1F1F1F1-0000-4000-8000-000000000001}|{F1F1F1F1-0000-4000-8000-000000000002}", "typeKey": "treelist" },
+      { "name": "AvailableRenderings", "value": "{F1F1F1F1-0000-4000-8000-000000000003}", "typeKey": "treelist" },
+      { "name": "NotFoundPage", "value": "{F1F1F1F1-0000-4000-8000-000000000004}", "typeKey": "droptree" }
+    ] }
+  },
+  "existing": {
+    "{F1F1F1F1-0000-4000-8000-000000000001}": "/sitecore/templates/Project/Demo/Page",
+    "{F1F1F1F1-0000-4000-8000-000000000002}": "/sitecore/templates/Project/Demo/Article",
+    "{F1F1F1F1-0000-4000-8000-000000000003}": "/sitecore/layout/Renderings/Project/Demo/Hero",
+    "{F1F1F1F1-0000-4000-8000-000000000004}": "/sitecore/content/Demo-Collection/Demo-Site/Home/not-found"
+  },
+  "published": ["{E0E0E0E0-E0E0-4E0E-8E0E-0E0E0E0E0001}"],
+  "expect": [["L5", "P2"]]
+}
