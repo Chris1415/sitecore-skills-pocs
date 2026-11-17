@@ -5,7 +5,7 @@ license: Apache-2.0
 compatibility: "SitecoreAI (Content SDK head apps for the delivery checks). Node 18+, no dependencies; Playwright optional (hydrated crawl). Needs an org automation client; an Edge administration client is optional (webhook state, read verbs only)."
 metadata:
   author: Christian Hahn
-  version: "0.2.8"
+  version: "0.2.9"
 ---
 
 # SitecoreAI health check (doctor)

@@ -20,7 +20,7 @@ const MISSING_COMPONENT = /component is missing React implementation|<MissingCom
 const isSso = (loc) => /\/sso-api/i.test(loc || '');
 
 const DEV_HOST = /^(localhost|127\.0\.0\.1)$/i;
-/** Video, audio or image sources on a dev host: renders an empty player with a clean 200 (OfficeCore's videos, 2026-11-04).
+/** Video, audio or image sources on a dev host: renders an empty player with a clean 200 (an install-package site's videos, 2026-11-04).
  *  A crawl OF a dev host (a local `next start`) serves its own media there, so nothing counts. */
 export const deadMediaSources = (html, crawlHost = '') => (DEV_HOST.test(crawlHost) ? [] : [...new Set([...String(html).matchAll(/<(?:source|video|audio|img)\b[^>]*?\b(?:src|poster|srcset)=["'][^"']*?(https?:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?(?:\/[^\s"',]*)?)/gi)].map((m) => m[1]))]);
 
